@@ -1,5 +1,5 @@
 body {
-background-color: #06a80e;
+background-color:#373c44;
 font-family: sans-serif;
 margin-left: auto;
 margin-right: auto;
@@ -12,7 +12,7 @@ padding-right: 24px
 }
 nav ul {
 list-style-type: none;
-background-color: Crimson;
+background-color: #f97731;
 border: 4px solid #111111;
 border-radius: 10px;
 font-family: sans-serif;
@@ -33,14 +33,14 @@ text-decoration: none;
 color: #111111;
 }
 nav li.selected{
-	color:#ed7e2f
+	color:#ff5900
 }
 nav ul li a:hover {
 text-decoration: underline;
 }
 p.fun-fact {
-background-color: #4fa4ff;
-border: 4px solid #1059a8;
+background-color: #f97731;
+border: 4px solid #000000;
 border-radius: 10px;
 padding: 16px;
 }
