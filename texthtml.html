@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="GameArchive.html">Game Archive</a></li>
+<li><a href="vids.html">Videos</a></li>
+<li><a href="message-of-the-day.html">Message Of The Day</a></li>
+<li><a href="MessageBoard.html">Message Board</a></li>
+</ul>
+</nav>    
+</head>
+    <LINK href="css/textcss.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="css/my-first-stylesheet.css"/>
+<div id="images">
+</div>
+<div id="text">
+</div>
+
+<input id="input" onkeypress="submitName(this)" placeholder='NAME' maxlength="10" onfocus="this.value=''">
+<div id="buttonBox">
+</div>
+        <script>
+var images = document.getElementById("images");
+var text = document.getElementById("text");
+var buttonBox = document.getElementById('buttonBox');
+var input = document.getElementById('input');
+var name;
+
+input.onkeypress = function(event) {
+  if (event.key == "Enter" || event.keyCode == 13) {
+    name =  input.value;
+    input.parentNode.removeChild(input)
+    advanceTo(scenario.two)
+  }
+};
+
+
+var changeText = function(words) {
+  text.innerHTML = words.replace("YourName", name);
+};
+
+var changeImage = function(img) {
+  images.style.backgroundImage = "url(" + img + ")";
+};
+
+var changeButtons = function(buttonList) {
+  buttonBox.innerHTML = "";
+  for (var i = 0; i < buttonList.length; i++) {
+    buttonBox.innerHTML += "<button onClick="+buttonList[i][1]+">" + buttonList[i][0] + "</button>";
+  }
+};
+
+var advanceTo = function(s) {
+  changeImage(s.image)
+  changeText(s.text)
+  changeButtons(s.buttons)
+};
+
+
+            scenario = {}
+var scenario = {
+  one: {
+    image: "pics/Cave.jpg", //cave
+    text: "You are stuck in a cave, what is your name traveler?",
+  },
+  two: {
+    image: "pics/Cave.jpg", //cave
+    text: "YourName, You are still stuck in a cave and you wasted alot of time telling me your name, what do you do",
+    buttons: [["Mine the walls", "advanceTo(scenario.three)"],["Look around", "advanceTo(scenario.four)"]]
+  },
+  three: {
+    image: "pics/9938491.png",
+    text: "YourName realizes micraft phycics arent real also you don't have enough sticks",
+    buttons: [["Go back", "advanceTo(scenario.two)"], ["eat a apple", "advanceTo(scenario.five)"]]
+  },
+  four: {
+    image: "pics/images.jpg",
+    text: "You found a pickaxe!",
+    buttons: [["Mine the walls", "advanceTo(scenario.six)"]]
+  },
+  five: {
+    image: "pics/produce-large-apple.jpg",
+    text: "YOU IDIOT YOU ATE YOUR LAST PEICE OF FOOD!!! YourName died of starvation",
+    buttons: [["Restart?", "location.reload();"]]
+  },
+  six: {
+    image: "pics/index.jpg",
+    text: "You got out but your in the middle of the forest!",
+    buttons: [["Run into the wilderness", "advanceTo(scenario.eight)"],["There is no second choice", "advanceTo(scenario.seven)"]]
+  },
+  seven: {
+    image: "pics/giphy.gif",
+    text: "ILUMINATI COMFIRMED, WHAT DO YOU DO",
+    buttons: [["Run to taco bell", "advanceTo(scenario.nine)"],["Call out to Harambe", "advanceTo(scenario.eleven)"], ["Hit the iluminati", "advanceTo(scenario.ten)"]]
+  },
+    eight: {
+    image: "pics/tmp812394537774219264.jpg",
+    text: "Bears like easy prey, YourName was eaten by a bear",
+    buttons: [["Restart?", "location.reload();"]]
+  },
+    nine: {
+    image: "pics/belluminati.jpg",
+    text: "Belluminati comfirmed. YourName dided of amazement",
+    buttons: [["Restart?", "location.reload()"]]
+  }, 
+    ten: {
+    image: "pics/EXPLOSION!.gif",
+    text: "first thing, your an idiot, second thing, the iluminati used its powers on you. YourName died of an explosion",
+    buttons: [["Restart?", "location.reload()"]]
+  },
+    eleven: {
+    image: "pics/44xioy7.gif",
+    text: "Harambe danced and decintregrated the iluminati, Harambe transports you back in time",
+    buttons: [["Continue", "advanceTo(scenario.twelve)"]]
+  },
+    twelve: {
+    image: "pics/2017_ncscj_zoo_gorilla_hearing_test_social_media.00_00_20_25.still002.jpg",
+    text: "Your back at the gorilla cage",
+    buttons: [["Jump in", "advanceTo(scenario.thirteen)"]]
+  },
+    thirteen: {
+    image: "pics/ohio-gorilla.jpg",
+    text: "Harambe saves your life but then he gets shot, so you go to a cave to search for clues of his survival",
+    buttons: [["Continue", "location.reload()"]]
+  }
+  
+};
+            advanceTo(scenario.one)
+        </script>
+</html>
