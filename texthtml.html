@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <head>
 <body>
 <nav>
@@ -20,7 +21,7 @@
 <div id="text">
 </div>
 
-<input id="input" onkeypress="submitName(this)" placeholder='NAME' maxlength="10" onfocus="this.value=''">
+<input id="input" onkeypress="submitName(this)" placeholder='NAME' maxlength="15" onfocus="this.value=''">
 <div id="buttonBox">
 </div>
         <script>
@@ -29,12 +30,26 @@ var text = document.getElementById("text");
 var buttonBox = document.getElementById('buttonBox');
 var input = document.getElementById('input');
 var name;
-
 input.onkeypress = function(event) {
   if (event.key == "Enter" || event.keyCode == 13) {
-    name =  input.value;
+    name = input.value;
     input.parentNode.removeChild(input)
-    advanceTo(scenario.two)
+    if(name == "Hints") {
+        advanceTo(scenario.fourteen)
+    } else {
+        if(name == "Harambe") {
+        advanceTo(scenario.fifteen)
+    } else {
+        if(name == "Bill Cypher") {
+        advanceTo(scenario.sixteen)
+    }
+        if(name == "696095.9265") {
+        advanceTo(scenario.seventeen)
+    }
+    if(name != "BillCypher" || name != "696095.9265")    
+    advanco(scenario.two)
+    }
+    }
   }
 };
 
@@ -126,8 +141,29 @@ var scenario = {
     image: "pics/ohio-gorilla.jpg",
     text: "Harambe saves your life but then he gets shot, so you go to a cave to search for clues of his survival",
     buttons: [["Continue", "location.reload()"]]
-  }
-  
+  },
+    fourteen: {
+    image: "pics/hint.jpg",
+    text: "1:Roses are red vilots are blue _______ is not dead and coming for you 2:Your faviorite triangle 3: 7 x 99394.4845 + 334.535",
+    buttons: [["Go Back", "location.reload()"]]
+  },
+    fifteen: {
+    image: "pics/harambe.gif",
+    text: "You found me :) kwws://zzz.kdudpeh.frp/",
+    buttons: [["Go Back", "location.reload()"]]
+  },
+    sixteen: {
+    image: "pics/billy.gif",
+    text: "Ive been waiting for you Dqg brx zloo qhyhu vhh wkh oljkw ri gdb djdlq :)",
+    buttons: [["Go Back", "location.reload()"]]
+  },
+    
+  seventeen: {
+    image: "pics/hack.jpg",
+    text: "Only a hacker could figure out this! try this link to figure out more https://www.braingle.com/brainteasers/codes/caesar.php another website but you will have to decipher it! kwws://zzz.qbdq.fdw/gdiw my faviorite flavor is the guy with the afro",
+    buttons: [["Go Back", "location.reload()"]]
+  },
+    
 };
             advanceTo(scenario.one)
         </script>
