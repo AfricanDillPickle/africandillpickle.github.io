@@ -40,13 +40,13 @@ input.onkeypress = function(event) {
         if(name == "Harambe") {
         advanceTo(scenario.fifteen)
     } else {
-        if(name == "Bill Cypher") {
+        if(name == "Bill Cipher") {
         advanceTo(scenario.sixteen)
     }
         if(name == "696095.9265") {
         advanceTo(scenario.seventeen)
     }
-    if(name != "BillCypher" && name != "696095.9265")    
+    if(name != "Bill Cipher" && name != "696095.9265")    
     advanceTo(scenario.two)
     }
     }
@@ -85,7 +85,7 @@ var scenario = {
   two: {
     image: "pics/Cave.jpg", //cave
     text: "YourName, You are still stuck in a cave and you wasted alot of time telling me your name, what do you do",
-    buttons: [["Mine the walls", "advanceTo(scenario.three)"],["Look around", "advanceTo(scenario.four)"]]
+    buttons: [["Mine the walls", "advanceTo(scenario.three)"],["Look around", "advanceTo(scenario.four)"],["Explore the cave", "advanceTo(scenario.eightteen)"]]
   },
   three: {
     image: "pics/9938491.png",
@@ -163,8 +163,30 @@ var scenario = {
     text: "Only a hacker could figure out this! try this link to figure out more https://www.braingle.com/brainteasers/codes/caesar.php another website but you will have to decipher it! kwws://zzz.qbdq.fdw/gdiw my faviorite flavor is the guy with the afro",
     buttons: [["Go Back", "location.reload()"]]
   },
-    
+    eightteen: {
+    image: "pics/UndergroundBunker_screenshot_07-1920x1080-c53239e4de10d6f26c1661590491a2ed.png",
+    text: "You found a room",
+    buttons: [["Go Back", "advanceTo(scenario.two)"], ["Explore", "advanceTo(scenario.nineteen)"]]
+  },
+    nineteen: {
+    image: "pics/_85829409_nuke_cut.jpg",
+    text: "You found a button labeled nuke",
+    buttons: [["Don't nuke", "advanceTo(scenario.twenntyone)"], ["Nuke City", "advanceTo(scenario.twennty)"]]
+  },
+    twennty: {
+    image: "pics/d4cc9e21ede2d1fce83c0956d740de08.gif",
+    text: "Your a monster.(TO BE CONTINUED(WORK IN PROGGRES))",
+    buttons: [["Restart?", "location.reload()"]]
+  },
+    twenntyone: {
+    image: "pics/gun-animated-gif-7.gif",
+    text: "You get shot from a man behind you",
+    buttons: [["Restart?", "location.reload()"]]
+  },
 };
             advanceTo(scenario.one)
         </script>
+    <audio autoplay loop>
+  <source src="audio/smbss_dothemario.mp3" type="audio/mpeg">
+</audio> 
 </html>
